@@ -5,6 +5,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0 maximum-scale=1.0">
         <link type="text/css" rel="stylesheet" href="main.css">
+        <style>
+            .container{
+                position:absolute !important;
+                top:0 !important;
+            }
+        </style>
     </head>
     
     <body>
@@ -13,6 +19,8 @@
         <script src="./TTFLoader.js"></script>
         <script src="./PLYLoader.js"></script>
         <script src="scoreoutputer.min.js"></script>
+
+        <div id="info"></div>
 
 
         <script>
@@ -59,7 +67,8 @@
                 //產生 "開啟自評表按鈕"
                 so.renderBtn(
                     //自評表按鈕插入位置
-                    document.body,
+                    // document.body,
+                    document.querySelector("#info"),
                     //自評表按鈕文字
                     "開啟自評表"
                 );
@@ -199,7 +208,7 @@
                     new THREE.MeshBasicMaterial( { color: 0xffffff, opacity: 0.2, transparent: true } )
                 );
 
-                plane.position.y = -50;
+                plane.position.y = -100;
                 plane.rotation.x = -Math.PI / 2;
 
                 scene.add( plane );
